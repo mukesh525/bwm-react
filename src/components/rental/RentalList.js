@@ -41,7 +41,7 @@ class RentalList extends Component{
 function mapStateToProps(state){
     debugger
     return {
-        rentals:state.rentals.data ? state.rentals.data :[]
+        rentals:state.rentals.data
     }
 }
 

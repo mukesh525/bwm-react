@@ -55,6 +55,7 @@ const rentals =[{
 
 
 export const fetchRentals =() =>{
+  debugger
     return {
         type:FETCH_RENTALS,
         rentals

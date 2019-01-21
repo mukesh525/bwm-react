@@ -16,7 +16,9 @@ class RentalDetail extends Component {
         return (
             <div>
                
-               <h1>{rental? rental.title:"test"}</h1>
+               <h1>{ rental.id}</h1>
+               <h1>{ rental.title}</h1>
+               <h1>{ rental.name}</h1>
        
            </div>
 
