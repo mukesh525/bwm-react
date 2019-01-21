@@ -4,11 +4,19 @@ import * as actions from '../../actions';
 
 
 class RentalDetail extends Component {
+
+    componentWillMount(){
+        const rentalId =this.props.match.params.id;
+        debugger;
+        this.props.dispatch(actions.fetchRentalsById(rentalId));
+     }
+
     render(){
+        const rental= this.props.rental;
         return (
             <div>
                
-               <h1>I m details componenet {this.props.match.params.id}</h1>
+               <h1>{rental? rental.title:"test"}</h1>
        
            </div>
 
@@ -17,8 +25,9 @@ class RentalDetail extends Component {
 }
 
 function mapStateToProps(state){
+    debugger
     return {
-        //rentals:state.rentals.data
+        rental:state.rental.data
     }
 }
 

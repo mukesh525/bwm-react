@@ -8,6 +8,7 @@ class RentalList extends Component{
  
 
     renderRentals(){
+        debugger;
        return this.props.rentals.map((rental,index)=>{
             return (
                  <RentalCard key ={index} colNum='col-md-3 col-xs-6' rental ={rental}/>
@@ -18,7 +19,7 @@ class RentalList extends Component{
 
 
     componentWillMount(){
-       this.props.dispatch(actions.fetchRentals());
+         this.props.dispatch(actions.fetchRentals());
     }
   
 
@@ -38,8 +39,9 @@ class RentalList extends Component{
 
 
 function mapStateToProps(state){
+    debugger
     return {
-        rentals:state.rentals.data
+        rentals:state.rentals.data ? state.rentals.data :[]
     }
 }
 
