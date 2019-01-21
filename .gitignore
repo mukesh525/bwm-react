@@ -24,3 +24,5 @@ yarn-error.log*
 
 #ignore all css
 /src/**/*.css
+src/*.css
+src/index.css
