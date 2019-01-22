@@ -1,5 +1,10 @@
 
-import {FETCH_RENTALS,FETCH_RENTALS_BY_ID} from './types';
+import {
+        FETCH_RENTALS,
+        FETCH_RENTALS_BY_ID_SUCESS,
+        FETCH_RENTALS_BY_ID_INIT
+      } from './types';
+
 const rentals =[{
     id: 1,
     title: "Central Apartment",
@@ -62,11 +67,34 @@ export const fetchRentals =() =>{
     }
 }
 
-export const fetchRentalsById = (rentalId) =>{
-  const rental = rentals.find((rental)=>rental.id == rentalId);
-  debugger;
+
+const fetchRentalsByIdinit = (rental) =>{
   return {
-      type:FETCH_RENTALS_BY_ID,
-      rental
-  }
+    type:FETCH_RENTALS_BY_ID_INIT,
+    rental
 }
+}
+
+const fetchRentalsByIdSucess = (rental) =>{
+  return {
+    type:FETCH_RENTALS_BY_ID_SUCESS,
+    rental
+}
+}
+
+
+
+export const fetchRentalsById = (rentalId) =>{
+  return function (dispatch){
+    dispatch(fetchRentalsByIdinit())
+      //send request to server ASYNC CODE
+     setTimeout(()=>{
+      const  rental = rentals.find((rental)=>rental.id === parseInt(rentalId));
+      dispatch(fetchRentalsByIdSucess(rental))
+    },1000)
+  
+  }
+ 
+}
+
+
