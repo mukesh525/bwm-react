@@ -13,7 +13,6 @@ export class RentalList extends Component{
     }
 
 
-
    render(){
        return(    
              <div className="row">
