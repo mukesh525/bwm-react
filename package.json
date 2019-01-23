@@ -1,8 +1,8 @@
 {
   "name": "bwm-react-cli",
   "version": "0.1.0",
-  "private": true,
-  "proxy": "http://localhost:3001",
+   "private": true,
+  
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^3.0.3",
