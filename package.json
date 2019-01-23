@@ -6,7 +6,6 @@
     "npm": "6.5.0"
   },
   "private": true,
-  "proxy": "http://localhost:3001",
   "dependencies": {
     "axios": "^0.18.0",
     "bcrypt": "^3.0.3",
@@ -42,8 +41,8 @@
     "build-css": "node-sass-chokidar ./src -o ./src",
     "watch-css": "npm run build-css && node-sass-chokidar ./src -o ./src --watch --recursive",
     "start-js": "react-scripts start",
-    "start": "npm run start --prefix server",
-     "start-dev": "npm-run-all -p watch-css start-js",
+    "ç": "npm run start --prefix server",
+    "start-dev": "npm-run-all -p watch-css start-js",
     "build-js": "react-scripts build",
     "build": "npm-run-all build-css build-js",
     "test": "react-scripts test --env=jsdom",

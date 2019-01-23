@@ -38,11 +38,6 @@ if (process.env.NODE_ENV === 'production') {
 }
   
 
-  app.get('*', function(req, res) {
-    res.sendFile(path.resolve(appPath, 'index.html'));
-  });
-}
-
 app.listen(PORT , function() {
   console.log('App is running!'+PORT);
 });
