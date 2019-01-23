@@ -23,7 +23,6 @@ class RentalListing extends Component{
 
 
 function mapStateToProps(state){
-    debugger
     return {
         rentals:state.rentals.data
     }
