@@ -9,7 +9,7 @@ class RentalDetail extends Component {
 
     componentWillMount(){
         const rentalId =this.props.match.params.id;
-        this.props.dispatch(actions.fetchRentalsById(rentalId));
+        this.props.dispatch(actions.fetchRentalById(rentalId));
      }
 
     render(){
