@@ -18,7 +18,7 @@ mongoose.connect(config.DB_URI,{ useNewUrlParser: true }).then(()=>{
       }
  });
 
-const Rental = require('./models/rental');
+//const Rental = require('./models/rental');
 const bodyParser = require('body-parser');
 
 const app = express();
@@ -38,8 +38,11 @@ if (process.env.NODE_ENV === 'production') {
 }
   
 
+  app.get('*', function(req, res) {
+    res.sendFile(path.resolve(appPath, 'index.html'));
+  });
+}
 
-app.listen(PORT,function(){
-    console.log('I m running '+PORT)
-})
-
+app.listen(PORT , function() {
+  console.log('App is running!'+PORT);
+});
