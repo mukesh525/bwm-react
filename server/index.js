@@ -29,8 +29,8 @@ app.use('/api/v1/rentals',rentalRoutes);
 app.use('/api/v1/users',userRoutes);
 app.use('/api/v1/bookings',bookingRoutes);
 
-if (process.env.NODE_ENV === 'production') {
-  const appPath = path.join(__dirname, '..', 'dist');
+if (process.env.NODE_ENV !== 'production') {
+  const appPath = path.join(__dirname, '..', 'build');
   app.use(express.static(appPath));
 
   app.get('*', function(req, res) {
@@ -38,8 +38,6 @@ if (process.env.NODE_ENV === 'production') {
   });
 }
 
-const PORT = process.env.PORT || 3001;
-
 app.listen(PORT , function() {
-  console.log('App is running!');
+  console.log('App is running!'+PORT);
 });
